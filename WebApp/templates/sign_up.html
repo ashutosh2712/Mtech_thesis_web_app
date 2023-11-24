@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+<title>{% block title %} sign-up {% endblock %}</title> 
+
+{% block content %}
+<body background="{{ url_for('static', filename='images/UC_davis_day1-22_telemedicine_hero.jpg')}}">
+  <div class="mask d-flex align-items-center h-100 ">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+              <form method="POST">
+                <div class="form-outline mb-4">
+                    <input type="email" id="email" name="email" class="form-control form-control-lg" placeholder="Enter Your Email Address" />
+
+                  </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="firstName" name="firstName" class="form-control form-control-lg" placeholder="Enter Your First Name" />
+
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" id="password1" name="password1" class="form-control form-control-lg" placeholder="Enter Password"/>
+
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="password" id="password2" name="password2" class="form-control form-control-lg" placeholder="Confirm Password"/>
+
+                </div>
+
+                <div class="form-check d-flex justify-content-center mb-5">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                  <label class="form-check-label" for="form2Example3g">
+                    I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                  </label>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="{{ url_for('auth.login') }}"
+                    class="fw-bold text-body"><u>Login here</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+  {{ form.username }}
+  {% if form.username.errors %}
+      <p class="error-message">{{ form.username.errors|join:", " }}</p>
+  {% endif %}
+
+  {{ form.email }}
+  {% if form.email.errors %}
+      <p class="error-message">{{ form.email.errors|join:", " }}</p>
+  {% endif %}
+
+  {{ form.password1 }}
+  {% if form.password1.errors %}
+      <p class="error-message">{{ form.password1.errors|join:", " }}</p>
+  {% endif %}
+
+  {{ form.password2 }}
+  {% if form.password2.errors %}
+      <p class="error-message">{{ form.password2.errors|join:", " }}</p>
+  {% endif %}
+
+  
+ {% endblock %}

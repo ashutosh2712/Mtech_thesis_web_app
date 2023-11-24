@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+<title>{% block title %} Home {% endblock %}</title> 
+
+{% block content %}
+   <form action="" method="POST">
+      <label for="blood-grp">
+        <select type="text" placeholder="Select Blood Group">
+            <option>A Positive</option>
+            <option>A Negative</option>
+            <option>A Unknown</option>
+            <option>B Positive</option>
+            <option>B Negative</option>
+            <option>B Unknown</option>
+            <option>AB Positive</option>
+            <option>AB Negative</option>
+            <option>AB Unknown</option>
+            <option>O Positive</option>
+            <option>O Negative</option>
+            <option>O Unknown</option>
+            <option>Unknown</option>
+        </select>
+      </label>
+   </form>
+{% endblock %}
